@@ -4,6 +4,10 @@ using System.Collections;
 public class Raycaster : MonoBehaviour {
 
 	// Use this for initialization
+    public float colorChangeDelay = 1f;
+    private float currentDelay = 0f;
+   
+
 	void Start () {
 
 	}
@@ -15,14 +19,13 @@ public class Raycaster : MonoBehaviour {
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, up * 2, Color.green);
-        if (Physics.Raycast(transform.position, up, out hit,0.1f))
+        if (Physics.Raycast(transform.position, up, out hit))
         {
      
 
             if (hit.collider.gameObject.name == "Cube")
             {
                 Debug.Log("Hit");
-        
             }
         }
 
